@@ -1,11 +1,12 @@
 import type { Routes } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { CocktailsService } from '@app/cocktails/services/cocktails.service';
 
 export const routes: Routes = [
   {
     path: '',
     title: 'Стартовая страница',
-    providers: [MessageService],
+    providers: [MessageService, CocktailsService],
     loadChildren: () => import('@app/cocktails/cocktails.routes'),
   },
   {

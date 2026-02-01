@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  height: 100%;
+
+  .app-cocktail-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    overflow-y: auto;
+    box-shadow: 0 0 4px 0 #b4deed;
+
+    h2 {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    span {
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    ::ng-deep .p-card {
+      height: 30rem;
+      max-width: 25rem;
+      overflow-y: auto;
+
+      .p-card-content {
+        text-align: center;
+      }
+    }
+  }
+
+}

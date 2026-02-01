@@ -1,0 +1,14 @@
+<p-dialog
+  [header]="dialogHeader()"
+  [modal]="true"
+  [keepInViewport]="true"
+  [style]="{ maxWidth: '75rem' }"
+  [(visible)]="visible"
+>
+  @let drink = cocktail();
+  @if (drink) {
+    <app-cocktail-detail-page [cocktail]="drink" />
+  } @else {
+    <span>Коктейль не найден.</span>
+  }
+</p-dialog>

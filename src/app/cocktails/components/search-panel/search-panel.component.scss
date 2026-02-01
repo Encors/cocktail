@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  padding: 2rem;
+  font-size: 2rem;
+  color: white;
+
+  input {
+    width: 35rem;
+    margin-right: 2rem;
+  }
+
+  div {
+    display: flex;
+    flex-wrap: nowrap;
+
+    & > p-button {
+      margin-right: 0.5rem;
+    }
+  }
+}

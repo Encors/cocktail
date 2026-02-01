@@ -1,0 +1,20 @@
+<input type="text" pInputText [(ngModel)]="searchValue" />
+<div>
+  <p-button
+    icon="pi pi-search"
+    severity="info"
+    title="Найти коктейль"
+    [outlined]="true"
+    [disabled]="!searchValue() || cocktailsService.isLoading()"
+    (click)="searchCocktails()"
+  />
+  <p-button
+    icon="pi pi-question-circle"
+    severity="info"
+    title="Найти случайный коктейль"
+    [outlined]="true"
+    [disabled]="cocktailsService.isLoading()"
+    (click)="searchRandomCocktail()"
+  />
+</div>
+<app-random-cocktail-dialog [(visible)]="showModal" />

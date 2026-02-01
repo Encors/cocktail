@@ -1,1 +1,19 @@
-<p>cocktail-detail-page works!</p>
+<p-card>
+  @let drink = cocktail();
+
+  <h2>{{ drink.strDrink }}</h2>
+
+  <div class="app-cocktail-image">
+    <img alt="Изображение коктейля" [src]="drink.strDrinkThumb" />
+  </div>
+
+  <div class="app-cocktail-info">
+    <p>{{ drink.strGlass }}</p>
+    <p>{{ drink.strInstructions }}</p>
+    <ul>
+      @for (ingredient of ingredients(); track $index) {
+        <li>{{ $index + 1 + '. ' + ingredient }}</li>
+      }
+    </ul>
+  </div>
+</p-card>

@@ -1,0 +1,18 @@
+<div class="app-cocktail-list">
+  @if (!cocktailsService.isLoading()) {
+    @let cocktailsList = cocktails();
+    @if (cocktailsList?.length) {
+      @for (cocktail of cocktailsList; track cocktail.idDrink) {
+        <p-card>
+          <h2 (click)="goToCard(cocktail.idDrink)">{{ cocktail.strDrink }}</h2>
+          <span>{{ cocktail.strGlass }}</span>
+          <img alt="Изображение коктейля" [src]="cocktail.strDrinkThumb" />
+        </p-card>
+      }
+    } @else {
+      <p>Нет данных.</p>
+    }
+  } @else {
+    <app-loader />
+  }
+</div>

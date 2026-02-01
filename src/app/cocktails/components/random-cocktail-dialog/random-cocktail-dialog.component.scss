@@ -1,0 +1,16 @@
+:host {
+  .app-cocktail-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+
+    ::ng-deep .p-card {
+      max-width: 25rem;
+      
+    }
+  }
+
+}
