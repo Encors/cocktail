@@ -1,0 +1,12 @@
+<header>
+  <p-button icon="pi pi-home" severity="info" title="Стартовая страница" routerLink="/" [outlined]="true" />
+  @if (!isSearchCocktailsPage()) {
+    <p-button
+      icon="pi pi-filter"
+      severity="info"
+      title="Найти коктейль"
+      [outlined]="true"
+      [routerLink]="['cocktails']"
+    />
+  }
+</header>

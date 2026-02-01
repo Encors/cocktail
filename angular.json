@@ -38,11 +38,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular/build:application",
           "options": {
-            "baseHref": "/cocktail-app/",
+            "baseHref": "/cocktail/",
             "outputPath": {
-              "base": "dist/cocktail-app",
+              "base": "dist/cocktail",
               "browser": ""
             },
             "index": "src/index.html",
