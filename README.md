@@ -1,5 +1,7 @@
 # CocktailApp
 
+* [Ссылка на сайт](https://encors.github.io/cocktail/)
+
 Приложение предназначено для поиска рецептов коктейлей и использует
 [TheCocktailDB API](https://www.thecocktaildb.com/api.php) в качестве источника данных.
 
@@ -16,8 +18,6 @@
 Рядом две кнопки: “Поиск коктейля по введенному значению” и “Поиск случайного рецепта”
 
 ## ['/cocktails/{:cocktailId}'](https://alinaalishandra.github.io/cocktail-app/cocktails/178362) - Страница для отображения выбранного рецепта
-
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
 
 ## Development server
 
