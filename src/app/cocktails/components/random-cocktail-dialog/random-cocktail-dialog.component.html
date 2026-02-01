@@ -6,6 +6,7 @@
   [(visible)]="visible"
 >
   @let drink = cocktail();
+
   @if (drink) {
     <app-cocktail-detail-page [cocktail]="drink" />
   } @else {

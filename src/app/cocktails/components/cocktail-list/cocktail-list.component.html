@@ -3,8 +3,8 @@
     @let cocktailsList = cocktails();
     @if (cocktailsList?.length) {
       @for (cocktail of cocktailsList; track cocktail.idDrink) {
-        <p-card>
-          <h2 (click)="goToCard(cocktail.idDrink)">{{ cocktail.strDrink }}</h2>
+        <p-card (click)="goToCard(cocktail.idDrink)">
+          <h2>{{ cocktail.strDrink }}</h2>
           <span>{{ cocktail.strGlass }}</span>
           <img alt="Изображение коктейля" [src]="cocktail.strDrinkThumb" />
         </p-card>

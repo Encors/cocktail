@@ -1,12 +1,7 @@
-import type { OnInit } from '@angular/core';
-import { ChangeDetectionStrategy, Component, computed, DestroyRef, inject, model, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, model } from '@angular/core';
 import CocktailDetailPageComponent from '@app/cocktails/pages/cocktail-detail-page/cocktail-detail-page.component';
 import { DialogModule } from 'primeng/dialog';
-import type { Cocktail } from '@app/cocktails/utils/interfaces';
 import { CocktailsService } from '@app/cocktails/services/cocktails.service';
-import { Router } from '@angular/router';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-random-cocktail-dialog',
@@ -15,21 +10,10 @@ import { tap } from 'rxjs';
   styleUrl: './random-cocktail-dialog.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RandomCocktailDialogComponent implements OnInit {
+export class RandomCocktailDialogComponent {
   readonly visible = model(false);
-  readonly cocktail = signal<Cocktail | null>(null);
+  private readonly cocktailsService = inject(CocktailsService);
+  readonly cocktail = this.cocktailsService.randomDrink;
+
   readonly dialogHeader = computed(() => this.cocktail()?.strDrink ?? 'Карточка коктейля');
-
-  protected cocktailsService = inject(CocktailsService);
-  protected destroyRef = inject(DestroyRef);
-  protected router = inject(Router);
-
-  ngOnInit(): void {
-    this.cocktailsService.randomDrink$
-      .pipe(
-        takeUntilDestroyed(this.destroyRef),
-        tap(res => res && this.cocktail.set(res)),
-      )
-      .subscribe();
-  }
 }
