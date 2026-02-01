@@ -9,4 +9,6 @@ import { CocktailListComponent } from '@app/cocktails/components/cocktail-list/c
   styleUrl: './cocktails-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class CocktailsPageComponent {}
+export default class CocktailsPageComponent {
+  protected year = new Date().getFullYear();
+}
